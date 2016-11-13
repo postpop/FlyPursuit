@@ -1,0 +1,3 @@
+[submodule "cv2to3"]
+	path = cv2to3
+	url = https://github.com/postpop/cv2to3.git
