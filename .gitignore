@@ -1,0 +1,6 @@
+__pycache__
+*.pyc
+*.lprof
+test/*.png 
+test/*.h5
+test/*.avi
