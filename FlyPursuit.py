@@ -15,6 +15,7 @@ from BackGround import BackGround
 from Results import Results
 import ForeGround as fg
 import Tracker as tk
+from postProcess import postProcess
 
 def run(file_name, override=False, init_only=False, display=None, save_video=False, nflies=1, threshold=0.4, save_interval=1000, start_frame=50, led_coords=[10, 550, 100, -1]):
    try:
@@ -154,6 +155,12 @@ def run(file_name, override=False, init_only=False, display=None, save_video=Fal
          cv2.destroyAllWindows()         
       if save_video:
          vw.release()
+      # call matlab postProcess script
+      try:
+         printf("postprocessing results in matlab")
+         postProcess( os.path.dirname(file_name) )
+      except:
+         pass
       return 1
 
    except Exception as e:
