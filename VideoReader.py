@@ -1,6 +1,6 @@
 import numpy as np
 import cv2
-import cv2to3 # cv2/cv3 compatibility layer
+from cv2to3.cv2to3 import * # cv2/cv3 compatibility layer
 
 class VideoReader:
     """wrapper around opencv's VideoCapture()

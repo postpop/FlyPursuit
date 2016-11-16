@@ -1,10 +1,9 @@
 import numpy as np
 import cv2
-import cv2to3
+from cv2to3.cv2to3 import *
 from VideoReader import VideoReader
 from BackGround import BackGround
 import scipy.ndimage as sci
-
 
 def circular_kernel(kernel_size=3):
    return cv2.getStructuringElement(cv2.MORPH_ELLIPSE,(kernel_size, kernel_size))
@@ -98,7 +97,7 @@ def get_chambers(background, chamber_threshold=0.6, min_size=40000, max_size=500
    unique_labels = np.unique(labeled_frame)
    condlist = np.any([area<min_size, area>max_size],axis=0)
    unique_labels[condlist] = 0
-   labeled_frame, *_ = clean_labels(labeled_frame, unique_labels, force_cont=True)
+   labeled_frame, _, _ = clean_labels(labeled_frame, unique_labels, force_cont=True)
    return labeled_frame
 
 def get_bounding_box(labeled_frame):

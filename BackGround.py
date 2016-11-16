@@ -1,6 +1,6 @@
 import numpy as np
 import cv2
-import cv2to3
+from cv2to3.cv2to3 import *
 from VideoReader import * 
 
 class BackGround():

@@ -2,7 +2,7 @@ import numpy as np
 from scipy import spatial
 from munkres import Munkres
 import cv2
-import cv2to3
+from cv2to3.cv2to3 import *
 m = Munkres()
 
 def match(old_centers, new_centers):
